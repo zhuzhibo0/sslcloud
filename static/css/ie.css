@@ -1,0 +1,31 @@
+input[type="text"], input[type="password"], textarea, select{padding: 0px; height: 25px; padding: 3px 0px 0px 5px;}
+.input-prepend .add-on,.input-append .add-on,
+.input-append input,.input-prepend input,
+.input-append button,.input-prepend button{float: left;}
+.add-on span{margin-top: 3px;}
+
+.body .navigation .buttons .sbutton{float: left; margin-right: 3px;}
+.body .navigation .button .icon{margin-top: 15px; float: left;}
+    .body .navigation .button .icon span{line-height: 30px; cursor: pointer;}
+    
+    
+.page-header .icon span{line-height: 22px;}
+    
+.body .content .widget{display: inline;}
+    .body .content .widget .icon span{line-height: 60px;}
+.body .content .swidget .icon span{line-height: 60px;}
+
+.body .content .block .head{height: 26px;}
+    .body .content .block .head h2{display: block; float: left;}
+    .body .content .block .head > .icon{float: left; display: block;}
+    .body .content .block .head a{text-decoration: none;}
+    
+.modal-header h3{float: left;}    
+.modal-header .close{line-height: 20px; height: 15px;}
+
+button.btn span{height: 10px; padding-top: 5px !important; display: inline;}
+button.btn span.caret{height: 4px; padding-top: 0px !important;}
+
+.tagsinput{overflow: hidden;}
+
+table td .checker{margin-top: 5px;}

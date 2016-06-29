@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>云监控</title>
+<meta name="keywords"
+	content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
+<meta name="description"
+	content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- basic styles -->
+<link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+
+<!--[if IE 7]>
+		  <link rel="stylesheet" href="/static/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+<!-- page specific plugin styles -->
+
+<!-- fonts -->
+
+<link rel="stylesheet"
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+
+<!-- ace styles -->
+
+<link rel="stylesheet" href="/static/css/ace.min.css" />
+<link rel="stylesheet" href="/static/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="/static/css/ace-skins.min.css" />
+
+<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="/static/css/ace-ie.min.css" />
+		<![endif]-->
+
+<!-- inline styles related to this page -->
+
+<!-- ace settings handler -->
+
+<script src="/static/js/ace-extra.min.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+<!--[if lt IE 9]>
+		<script src="/static/js/html5shiv.js"></script>
+		<script src="/static/js/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+	<div class="navbar navbar-default" id="navbar">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('navbar', 'fixed')
+			} catch (e) {
+			}
+		</script>
+
+		<div class="navbar-container" id="navbar-container">
+			<div class="navbar-header pull-left">
+				<a href="#" class="navbar-brand"> <small> <i
+						class="icon-leaf"></i> 云监控
+				</small>
+				</a>
+				<!-- /.brand -->
+			</div>
+			<!-- /.navbar-header -->
+
+			<div class="navbar-header pull-right" role="navigation">
+				<ul class="nav ace-nav">
+
+
+
+
+
+
+					<li class="light-blue"><a data-toggle="dropdown" href="#"
+						class="dropdown-toggle"> <span class="user-info"> <small>你好,</small>
+								Jason
+						</span> <i class="icon-caret-down"></i>
+					</a>
+
+						<ul
+							class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+							<li><a href="#"> <i class="icon-cog"></i> 设置
+							</a></li>
+
+							<li><a href="#"> <i class="icon-user"></i> 个人资料
+							</a></li>
+
+							<li class="divider"></li>
+
+							<li><a href="#"> <i class="icon-off"></i> 退出
+							</a></li>
+						</ul></li>
+				</ul>
+				<!-- /.ace-nav -->
+			</div>
+			<!-- /.navbar-header -->
+		</div>
+		<!-- /.container -->
+	</div>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('main-container', 'fixed')
+			} catch (e) {
+			}
+		</script>
+
+		<div class="main-container-inner">
+			<a class="menu-toggler" id="menu-toggler" href="#"> <span
+				class="menu-text"></span>
+			</a>
+
+			<div class="sidebar" id="sidebar">
+				<script type="text/javascript">
+					try {
+						ace.settings.check('sidebar', 'fixed')
+					} catch (e) {
+					}
+				</script>
+
+				{% include "create_navlist.html" %}
+
+				<div class="sidebar-collapse" id="sidebar-collapse">
+					<i class="icon-double-angle-left"
+						data-icon1="icon-double-angle-left"
+						data-icon2="icon-double-angle-right"></i>
+				</div>
+
+				<script type="text/javascript">
+					try {
+						ace.settings.check('sidebar', 'collapsed')
+					} catch (e) {
+					}
+				</script>
+			</div>
+
+			<div class="main-content">
+
+
+				<div class="page-content">
+
+
+					<div class="row">
+
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+							<div class="alert alert-info">
+								<i class="icon-hand-right"></i> 创建监控项目
+							</div>
+							<div class="form-horizontal" id="policy-form"
+								style="display: block;">
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> <span
+										class="require_text">*</span> 项目名称：
+									</label>
+									<div class="col-sm-7">
+										<input type="text" id="name"
+											class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> <span
+										class="require_text">*</span> 域名：
+									</label>
+									<div class="col-sm-7">
+										<input type="text" id="domain"
+											class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required"
+											placeholder="例如:a.test.com">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> <span
+										class="require_text">*</span> 端口号：
+									</label>
+									<div class="col-sm-7">
+										<span class="block input-icon input-icon-right"> <input
+											id="port" value="433"
+											class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required"
+											ng-model="appidInfo.appname_zh" placeholder="">
+										</span>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> <span
+										class="require_text">*</span> 检测频率:
+									</label>
+									<div class="col-sm-7">
+										<select class="form-control" id="frequency">
+											<option value="5">5分钟</option>
+											<option value="10">10分钟</option>
+											<option value="15">15分钟</option>
+											<option value="20">20分钟</option>
+											<option value="25">25分钟</option>
+											<option value="30">30分钟</option>
+											<option value="35">35分钟</option>
+											<option value="40">40分钟</option>
+											<option value="45">45分钟</option>
+											<option value="50">50分钟</option>
+											<option value="55">55分钟</option>
+											<option value="60">60分钟</option>
+										</select>
+									</div>
+
+
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> <span
+										class="require_text">*</span>通知规则:
+									</label>
+									<div class="col-sm-7">
+										<select class="form-control" id="notify_id"> 
+										{% for i in notiy_rules %}
+											<option value="{{i.id}}">{{i.name}}</option>
+											 {% endfor%}
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-2 control-label"> <span
+										class="require_text">*</span>扩展检测:
+									</label>
+									 
+                                    <div class="col-sm-7">
+										<label> <input name="extern_check" value="ccs"
+											type="checkbox" class="ace"> <span class="lbl">
+												CCS检测</span>
+										</label> 
+									 
+
+										<label> <input name="extern_check" value="hsts"
+											type="checkbox" class="ace"> <span class="lbl">
+												HSTS检测</span>
+										</label>  
+
+										<label> <input name="extern_check" value="heartbleed"
+											type="checkbox" class="ace"> <span class="lbl">
+												HeardBleed检测</span>
+										</label>									
+										<label> <input name="extern_check" value="poodle"
+											type="checkbox" class="ace"> <span class="lbl">
+												Poodle检测</span>
+										</label>
+								 	</div>
+								</div>
+
+								<h3 class="apply_title"></h3>
+
+
+
+								<div class="hr hr16 hr-dotted"></div>
+								<div class="form-group has-info">
+									<label for="inputInfo"
+										class="col-xs-12 col-sm-3 control-label no-padding-right">
+									</label>
+									<div class="input-group col-sm-4">
+										<button class="btn btn-success btn-block"
+											onclick="create()">提交</button>
+									</div>
+								</div>
+
+							</div>
+
+							<!-- PAGE CONTENT ENDS -->
+						</div>
+						<!-- /.col -->
+
+					</div>
+					<!-- /row -->
+
+					<!-- PAGE CONTENT ENDS -->
+				</div>
+				<!-- /.col -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /.page-content -->
+	</div>
+	<!-- /.main-content -->
+
+
+	</div>
+	<!-- /.main-container-inner -->
+
+	<a href="#" id="btn-scroll-up"
+		class="btn-scroll-up btn btn-sm btn-inverse"> <i
+		class="icon-double-angle-up icon-only bigger-110"></i>
+	</a>
+	</div>
+	<!-- /.main-container -->
+
+	<!-- basic scripts -->
+	<!--[if !IE]> -->
+
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+	<!--[if !IE]> -->
+
+	<script type="text/javascript">
+		window.jQuery
+				|| document
+						.write("<script src='/static/js/jquery-2.0.3.min.js'>"
+								+ "<"+"/script>");
+	</script>
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='/static/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+	<script type="text/javascript">
+		if ("ontouchend" in document)
+			document
+					.write("<script src='/static/js/jquery.mobile.custom.min.js'>"
+							+ "<"+"/script>");
+	</script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/typeahead-bs2.min.js"></script>
+
+	<!-- page specific plugin scripts -->
+
+	<script src="/static/js/date-time/bootstrap-datepicker.min.js"></script>
+	<script src="/static/js/jqGrid/jquery.jqGrid.min.js"></script>
+	<script src="/static/js/jqGrid/i18n/grid.locale-en.js"></script>
+
+	<!-- ace scripts -->
+
+	<script src="/static/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="/static/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="/static/js/jquery.slimscroll.min.js"></script>
+	<script src="/static/js/jquery.easy-pie-chart.min.js"></script>
+	<script src="/static/js/jquery.sparkline.min.js"></script>
+	<script src="/static/js/flot/jquery.flot.min.js"></script>
+	<script src="/static/js/flot/jquery.flot.pie.min.js"></script>
+	<script src="/static/js/flot/jquery.flot.resize.min.js"></script>
+	<script src="/static/js/jquery.dataTables.min.js"></script>
+	<!-- ace scripts -->
+	<script src="/static/js/bootbox.min.js"></script>
+	<script src="/static/js/ace-elements.min.js"></script>
+	<script src="/static/js/ace.min.js"></script>
+
+	<!-- inline scripts related to this page -->
+	<script src="/static/js/highcharts.js"></script>
+	<script type="text/javascript">
+	function alert_msg(msg)
+	{
+		bootbox.dialog({
+			message: "<span class='bigger-110'>"+msg+"</span>",
+			buttons: 			
+			{
+				"success" :
+				 {
+					"label" : "<i class='icon-ok'></i>返回",
+					"className" : "btn-sm btn-success",
+					"callback": function() { 
+					}
+				} 
+			}
+		});
+
+	}
+
+	function alert_msg_jump(msg)
+	{
+		bootbox.dialog({
+			message: "<span class='bigger-110'>"+msg+"</span>",
+			buttons: 			
+			{
+				"success" :
+				 {
+					"label" : "<i class='icon-ok'></i>返回",
+					"className" : "btn-sm btn-success",
+					"callback": function() { 
+		            	window.location.href='/project/'
+					}
+				} 
+			}
+		});
+
+	}
+	
+		function create() {
+			var name = $('#name').val();
+			var domain = $('#domain').val();
+			var port = $('#port').val();
+			var frequency = $('#frequency').val();
+			var notify_id =  $('#notify_id').val();
+	
+			
+			var chkobj = document.getElementsByName("extern_check");
+			var chkval = '';
+			
+			 
+			 for(var i=0;i<chkobj.length;i++){  
+                 if(chkobj[i].checked)
+                 { 
+                	 chkval+=chkobj[i].value+';'
+                 } 
+            }  
+			
+			 if(name=="")
+		     {
+				 alert_msg("项目名称不能为空");
+				 return;
+		     }
+			 if(domain=="")
+		     {
+				 alert_msg("域名不能为空");
+				 return;
+		     }
+			 if(port=="")
+		     {
+				 alert_msg("项目名称不能为空");
+				 return;
+		     }
+			 var postData = {
+					 'name':name,
+					 'domain':domain,
+					 'port':port,
+					 'frequency':frequency, 
+					 'notify_id':notify_id,
+					 'extern_check':chkval, 
+			 }
+
+			 $.ajax({
+		        	type: 'post',
+		        	async: true,
+		        	url: '/project/createproject',
+		        	contentType: "application/json; charset=utf-8",
+		        	data:JSON.stringify( postData),
+		        	dataType: "json", 
+		        	success: function(results){
+		        		    if(results['result'])
+		        		    {
+		        		    	alert_msg_jump('添加成功');
+		        		    }else
+		        		    {
+		        		    	alert_msg(results['info']);
+		        		    } 
+		                	
+		        	},
+		        	error: function(errorMsg){
+		        		 alert_msg("发生错误"); 
+		        	}
+		    	    }); 
+			
+			
+		};
+
+	</script>
+	<div style="display: none">
+		<script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540'
+			language='JavaScript' charset='gb2312'></script>
+	</div>
+</body>
+</html>
+
