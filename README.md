@@ -18,6 +18,7 @@ python manage.py runserver 0.0.0.0:80
 或者uwsgi+nginx方式。
 
 
+
 启动后。进入admin后台
 配置主节点信息：（所有节点都需要进行配置）
 Setting ->server_settings
@@ -31,9 +32,12 @@ Setting ->server_settings
 		port    http服务的端口
 	有多少个节点就添加多少。
   
-  
+ 
 每个检测节点启动检测服务：
 python checktask.py&
+
+代码写的时间比较短(给代码写的不好找借口)，主要思想是云监控，可以设置多个地区的扫描机，后面也可以增加一些延时的检测之类的。欢迎大神们来吐槽。
+
 
     
     
